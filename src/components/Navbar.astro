@@ -1,0 +1,88 @@
+---
+import { Icon } from "astro-icon/components";
+import { nav, site } from "../data/site";
+---
+
+<header
+  id="site-nav"
+  class="fixed inset-x-0 top-0 z-50 transition-[background,border,box-shadow] duration-300">
+  <div
+    class="mx-auto flex w-full max-w-5xl items-center justify-between px-6 sm:px-8 py-4">
+    <a
+      href="#top"
+      class="font-display text-lg tracking-tight text-neutral-900 hover:text-[color:var(--color-accent)] transition-colors">
+      {site.name.split(" ")[0]}<span class="text-[color:var(--color-accent)]">.</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1" aria-label="Primary">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="px-3 py-1.5 text-sm text-neutral-600 rounded-full hover:text-neutral-900 hover:bg-neutral-100 transition-colors">
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden md:flex items-center gap-2">
+      <a
+        href={site.resumeUrl}
+        download
+        class="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-4 py-2 text-xs font-medium text-neutral-50 hover:bg-neutral-800 transition-all hover:-translate-y-0.5 shadow-sm">
+        <Icon name="lucide:download" class="h-3.5 w-3.5" aria-hidden="true" />
+        Resume
+      </a>
+    </div>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-200 bg-white/70 text-neutral-900 backdrop-blur">
+      <span class="sr-only">Toggle menu</span>
+      <Icon id="menu-open-icon" name="lucide:menu" class="h-5 w-5" aria-hidden="true" />
+      <Icon id="menu-close-icon" name="lucide:x" class="h-5 w-5 hidden" aria-hidden="true" />
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-neutral-200 bg-white/95 backdrop-blur">
+    <nav class="flex flex-col px-6 py-4" aria-label="Mobile">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="py-3 text-sm text-neutral-700 border-b border-neutral-100 last:border-b-0 hover:text-neutral-900">
+            {item.label}
+          </a>
+        ))
+      }
+      <a
+        href={site.resumeUrl}
+        download
+        class="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-4 py-2.5 text-sm font-medium text-neutral-50">
+        <Icon name="lucide:download" class="h-4 w-4" aria-hidden="true" />
+        Download resume
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  #site-nav {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+  }
+  #site-nav.is-scrolled {
+    background: rgba(251, 250, 247, 0.8);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid rgba(23, 23, 21, 0.08);
+  }
+</style>
+
+<script>
+  import "../scripts/navbar";
+</script>

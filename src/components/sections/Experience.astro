@@ -1,0 +1,72 @@
+---
+import { Icon } from "astro-icon/components";
+import Container from "../ui/Container.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import { experience } from "../../data/cv";
+---
+
+<section id="experience" class="py-20 sm:py-28">
+  <Container>
+    <SectionHeading
+      eyebrow="Experience"
+      title="Places I've built and shipped things."
+      description="A short tour of the teams I've worked with and what I contributed."
+    />
+
+    <ol class="relative">
+      <div aria-hidden="true" class="absolute left-[7px] top-2 bottom-2 w-px bg-neutral-200"></div>
+      {
+        experience.map((role, idx) => (
+          <li class="reveal relative pl-10 pb-12 last:pb-0" data-delay={String((idx % 3) + 1)}>
+            <span
+              aria-hidden="true"
+              class="absolute left-0 top-2 flex h-4 w-4 items-center justify-center">
+              <span class="absolute inline-flex h-full w-full rounded-full bg-[color:var(--color-accent)] opacity-20"></span>
+              <span class="relative h-2 w-2 rounded-full bg-[color:var(--color-accent)]"></span>
+            </span>
+
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="text-xl font-semibold tracking-tight text-neutral-900">
+                {role.position}
+                <span class="text-neutral-400 font-normal"> · </span>
+                {role.companyUrl ? (
+                  <a
+                    href={role.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-[color:var(--color-accent)] link-underline inline-flex items-center gap-1">
+                    {role.company}
+                    <Icon name="lucide:arrow-up-right" class="h-4 w-4" aria-hidden="true" />
+                  </a>
+                ) : (
+                  <span class="text-[color:var(--color-accent)]">{role.company}</span>
+                )}
+              </h3>
+              <span class="text-xs font-medium uppercase tracking-wider text-neutral-500">
+                {role.period}
+              </span>
+            </div>
+
+            <p class="mt-1 text-sm text-neutral-500">{role.location}</p>
+
+            {role.blurb && (
+              <p class="mt-4 text-neutral-700 leading-relaxed">{role.blurb}</p>
+            )}
+
+            <ul class="mt-4 space-y-2.5">
+              {role.points.map((point) => (
+                <li class="flex gap-3 text-neutral-700 leading-relaxed">
+                  <span
+                    aria-hidden="true"
+                    class="mt-2 h-1 w-1 shrink-0 rounded-full bg-neutral-400"
+                  />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ol>
+  </Container>
+</section>

@@ -1,0 +1,12 @@
+---
+type Props = {
+  class?: string;
+  as?: string;
+};
+
+const { class: className = "", as: Tag = "div" } = Astro.props;
+---
+
+<Tag class={`mx-auto w-full max-w-5xl px-6 sm:px-8 ${className}`}>
+  <slot />
+</Tag>

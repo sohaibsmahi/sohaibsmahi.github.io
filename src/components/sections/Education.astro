@@ -1,0 +1,71 @@
+---
+import { Icon } from "astro-icon/components";
+import Container from "../ui/Container.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import { education, certifications, languages } from "../../data/cv";
+---
+
+<section id="education" class="py-20 sm:py-28">
+  <Container>
+    <SectionHeading
+      eyebrow="Background"
+      title="Education, certifications and languages."
+    />
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <div class="reveal rounded-2xl border border-neutral-200 bg-white p-6">
+        <div class="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-neutral-500">
+          <Icon name="lucide:graduation-cap" class="h-4 w-4" aria-hidden="true" />
+          Education
+        </div>
+        <ul class="mt-5 space-y-5">
+          {
+            education.map((item) => (
+              <li>
+                <p class="font-medium text-neutral-900">{item.area}</p>
+                <p class="text-sm text-neutral-600 mt-0.5">{item.school}</p>
+                <p class="text-xs text-neutral-500 mt-1">
+                  {item.location} · {item.period}
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="reveal rounded-2xl border border-neutral-200 bg-white p-6" data-delay="1">
+        <div class="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-neutral-500">
+          <Icon name="lucide:award" class="h-4 w-4" aria-hidden="true" />
+          Certifications
+        </div>
+        <ul class="mt-5 space-y-5">
+          {
+            certifications.map((cert) => (
+              <li>
+                <p class="font-medium text-neutral-900">{cert.title}</p>
+                <p class="text-xs text-neutral-500 mt-1">{cert.date}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="reveal rounded-2xl border border-neutral-200 bg-white p-6" data-delay="2">
+        <div class="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-neutral-500">
+          <Icon name="lucide:languages" class="h-4 w-4" aria-hidden="true" />
+          Languages
+        </div>
+        <ul class="mt-5 space-y-3">
+          {
+            languages.map((lang) => (
+              <li class="flex items-baseline justify-between gap-3">
+                <span class="text-neutral-800 font-medium">{lang.name}</span>
+                <span class="text-xs text-neutral-500">{lang.level}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </Container>
+</section>
