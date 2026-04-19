@@ -1,8 +1,8 @@
 ---
-import { Icon } from "astro-icon/components";
-import Container from "../ui/Container.astro";
-import SectionHeading from "../ui/SectionHeading.astro";
-import { experience } from "../../data/cv";
+import { Icon } from "astro-icon/components"
+import Container from "../ui/Container.astro"
+import SectionHeading from "../ui/SectionHeading.astro"
+import { experience } from "../../data/cv"
 ---
 
 <section id="experience" class="py-20 sm:py-28">
@@ -14,15 +14,23 @@ import { experience } from "../../data/cv";
     />
 
     <ol class="relative">
-      <div aria-hidden="true" class="absolute left-[7px] top-2 bottom-2 w-px bg-neutral-200"></div>
+      <div
+        aria-hidden="true"
+        class="absolute left-[7px] top-2 bottom-2 w-px bg-neutral-200"
+      >
+      </div>
       {
         experience.map((role, idx) => (
-          <li class="reveal relative pl-10 pb-12 last:pb-0" data-delay={String((idx % 3) + 1)}>
+          <li
+            class="reveal relative pl-10 pb-12 last:pb-0"
+            data-delay={String((idx % 3) + 1)}
+          >
             <span
               aria-hidden="true"
-              class="absolute left-0 top-2 flex h-4 w-4 items-center justify-center">
-              <span class="absolute inline-flex h-full w-full rounded-full bg-[color:var(--color-accent)] opacity-20"></span>
-              <span class="relative h-2 w-2 rounded-full bg-[color:var(--color-accent)]"></span>
+              class="absolute left-0 top-2 flex h-4 w-4 items-center justify-center"
+            >
+              <span class="absolute inline-flex h-full w-full rounded-full bg-accent opacity-20" />
+              <span class="relative h-2 w-2 rounded-full bg-accent" />
             </span>
 
             <div class="flex flex-wrap items-baseline justify-between gap-2">
@@ -34,12 +42,17 @@ import { experience } from "../../data/cv";
                     href={role.companyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-[color:var(--color-accent)] link-underline inline-flex items-center gap-1">
+                    class="text-accent link-underline inline-flex items-center gap-1"
+                  >
                     {role.company}
-                    <Icon name="lucide:arrow-up-right" class="h-4 w-4" aria-hidden="true" />
+                    <Icon
+                      name="lucide:arrow-up-right"
+                      class="h-4 w-4"
+                      aria-hidden="true"
+                    />
                   </a>
                 ) : (
-                  <span class="text-[color:var(--color-accent)]">{role.company}</span>
+                  <span class="text-accent">{role.company}</span>
                 )}
               </h3>
               <span class="text-xs font-medium uppercase tracking-wider text-neutral-500">

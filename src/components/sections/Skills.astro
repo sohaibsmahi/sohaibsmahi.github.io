@@ -1,8 +1,8 @@
 ---
-import { Icon } from "astro-icon/components";
-import Container from "../ui/Container.astro";
-import SectionHeading from "../ui/SectionHeading.astro";
-import { skillGroups } from "../../data/cv";
+import { Icon } from "astro-icon/components"
+import Container from "../ui/Container.astro"
+import SectionHeading from "../ui/SectionHeading.astro"
+import { skillGroups } from "../../data/cv"
 ---
 
 <style>
@@ -11,7 +11,7 @@ import { skillGroups } from "../../data/cv";
   }
 </style>
 
-<section id="skills" class="py-20 sm:py-28 bg-[color:var(--color-surface)]/40">
+<section id="skills" class="py-20 sm:py-28 bg-surface/40">
   <Container>
     <SectionHeading
       eyebrow="Toolbox"
@@ -24,7 +24,8 @@ import { skillGroups } from "../../data/cv";
         skillGroups.map((group, idx) => (
           <div
             class="reveal rounded-2xl border border-neutral-200 bg-white p-6 transition-all duration-300 hover:border-neutral-300 hover:shadow-sm"
-            data-delay={String((idx % 4) + 1)}>
+            data-delay={String((idx % 4) + 1)}
+          >
             <h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-neutral-500">
               {group.title}
             </h3>
@@ -33,7 +34,8 @@ import { skillGroups } from "../../data/cv";
                 <li>
                   <span
                     class="skill-chip group inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50/60 px-3 py-1.5 text-sm text-neutral-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-900 hover:bg-white hover:text-neutral-900"
-                    style={skill.color ? `--brand: ${skill.color}` : undefined}>
+                    style={skill.color ? `--brand: ${skill.color}` : undefined}
+                  >
                     {skill.icon && (
                       <Icon
                         name={skill.icon}

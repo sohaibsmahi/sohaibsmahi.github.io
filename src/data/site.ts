@@ -10,7 +10,7 @@ export const site = {
   resumeUrl: "/souheib-smahi-cv.pdf",
   picture:
     "https://storage.rxresu.me/clzodbdck6xkwvrn36aihpick/pictures/wgl59x97ae80pivaotsproxl.jpg",
-} as const;
+} as const
 
 export const nav = [
   { href: "#about", label: "About" },
@@ -18,4 +18,4 @@ export const nav = [
   { href: "#skills", label: "Skills" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
-] as const;
+] as const

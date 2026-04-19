@@ -145,6 +145,8 @@ export const skillGroups: SkillGroup[] = [
         icon: "simple-icons:tailwindcss",
         color: "#06B6D4",
       },
+      { name: "Shadcn", icon: "simple-icons:shadcnui", color: "#111111" },
+      { name: "Ant Design", icon: "simple-icons:antdesign", color: "#0170FE" },
       { name: "MUI", icon: "simple-icons:mui", color: "#007FFF" },
       { name: "Redux", icon: "simple-icons:redux", color: "#764ABC" },
       {

@@ -1,16 +1,16 @@
 ---
-import "../styles/global.css";
-import { site } from "../data/site";
+import "../styles/global.css"
+import { site } from "../data/site"
 
 type Props = {
-  title?: string;
-  description?: string;
-};
+  title?: string
+  description?: string
+}
 
 const {
   title = `${site.name} · ${site.role}`,
-  description = `Portfolio of ${site.name}, a ${site.role} based in ${site.location}.`,
-} = Astro.props;
+  description = `${site.name}, a ${site.role}.`,
+} = Astro.props
 ---
 
 <!doctype html>
@@ -43,14 +43,15 @@ const {
   <body class="min-h-screen antialiased">
     <a
       href="#main"
-      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-neutral-900 focus:px-3 focus:py-2 focus:text-sm focus:text-white">
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-60 focus:rounded focus:bg-neutral-900 focus:px-3 focus:py-2 focus:text-sm focus:text-white"
+    >
       Skip to content
     </a>
     <main id="main">
       <slot />
     </main>
     <script>
-      import "../scripts/reveal";
+      import "../scripts/reveal"
     </script>
   </body>
 </html>

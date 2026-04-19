@@ -1,31 +1,42 @@
 ---
-import { Icon } from "astro-icon/components";
-import Container from "../ui/Container.astro";
-import Button from "../ui/Button.astro";
-import { site } from "../../data/site";
+import { Icon } from "astro-icon/components"
+import Container from "../ui/Container.astro"
+import Button from "../ui/Button.astro"
+import { site } from "../../data/site"
 ---
 
-<section id="top" class="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
-  <div aria-hidden="true" class="absolute inset-0 grid-bg pointer-events-none"></div>
+<section
+  id="top"
+  class="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28"
+>
+  <div aria-hidden="true" class="absolute inset-0 grid-bg pointer-events-none">
+  </div>
   <div
     aria-hidden="true"
-    class="absolute -top-24 left-1/2 -translate-x-1/2 h-[520px] w-[520px] rounded-full bg-[radial-gradient(closest-side,rgba(180,83,9,0.10),transparent_70%)] animate-drift pointer-events-none">
+    class="absolute -top-24 left-1/2 -translate-x-1/2 h-[520px] w-[520px] rounded-full bg-[radial-gradient(closest-side,rgba(180,83,9,0.10),transparent_70%)] animate-drift pointer-events-none"
+  >
   </div>
 
   <Container class="relative">
     <div class="flex flex-col items-start">
-      <div class="reveal flex items-center gap-3 rounded-full border border-neutral-200 bg-white/70 px-3 py-1 text-xs text-neutral-600 backdrop-blur">
+      <div
+        class="reveal flex items-center gap-3 rounded-full border border-neutral-200 bg-white/70 px-3 py-1 text-xs text-neutral-600 backdrop-blur"
+      >
         <span class="relative flex h-2 w-2">
-          <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-70 animate-ping"></span>
-          <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+          <span
+            class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-70 animate-ping"
+          ></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"
+          ></span>
         </span>
         Available for new opportunities
       </div>
 
       <h1
         class="reveal mt-8 font-display text-5xl sm:text-6xl md:text-7xl font-normal leading-[1.02] tracking-tight text-neutral-900"
-        data-delay="1">
-        Hi, I&rsquo;m <span class="italic text-[color:var(--color-accent)]">Souheib</span>.
+        data-delay="1"
+      >
+        Hi, I&rsquo;m <span class="italic text-accent">Souheib</span>.
         <br />
         I build web apps
         <br />
@@ -34,16 +45,24 @@ import { site } from "../../data/site";
 
       <p
         class="reveal mt-8 max-w-xl text-lg sm:text-xl leading-relaxed text-neutral-600"
-        data-delay="2">
+        data-delay="2"
+      >
         Software Engineer based in Berlin. Five years shipping frontends in
         TypeScript and React, with real backend work in between. I like clean
         code, tight UI, and apps that stay out of the user&rsquo;s way.
       </p>
 
-      <div class="reveal mt-10 flex flex-wrap items-center gap-3" data-delay="3">
+      <div
+        class="reveal mt-10 flex flex-wrap items-center gap-3"
+        data-delay="3"
+      >
         <Button href="#contact">
           Get in touch
-          <Icon name="lucide:arrow-right" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true" />
+          <Icon
+            name="lucide:arrow-right"
+            class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+            aria-hidden="true"
+          />
         </Button>
         <Button href={site.resumeUrl} variant="outline" download>
           <Icon name="lucide:download" class="h-4 w-4" aria-hidden="true" />
@@ -51,10 +70,14 @@ import { site } from "../../data/site";
         </Button>
       </div>
 
-      <div class="reveal mt-10 flex items-center gap-5 text-sm text-neutral-500" data-delay="4">
+      <div
+        class="reveal mt-10 flex items-center gap-5 text-sm text-neutral-500"
+        data-delay="4"
+      >
         <a
           href={`mailto:${site.email}`}
-          class="inline-flex items-center gap-2 link-underline hover:text-neutral-900 transition-colors">
+          class="inline-flex items-center gap-2 link-underline hover:text-neutral-900 transition-colors"
+        >
           <Icon name="lucide:mail" class="h-4 w-4" aria-hidden="true" />
           {site.email}
         </a>

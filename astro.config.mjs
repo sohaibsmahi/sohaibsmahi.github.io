@@ -39,6 +39,8 @@ export default defineConfig({
           "html5",
           "css3",
           "tailwindcss",
+          "shadcnui",
+          "antdesign",
           "mui",
           "redux",
           "reactrouter",
@@ -65,8 +67,5 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      allowedHosts: ["gentle-robin-22.loca.lt"],
-    },
   },
 })

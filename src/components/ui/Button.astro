@@ -1,13 +1,13 @@
 ---
 type Props = {
-  href?: string;
-  variant?: "primary" | "ghost" | "outline";
-  class?: string;
-  target?: string;
-  rel?: string;
-  download?: boolean | string;
-  "aria-label"?: string;
-};
+  href?: string
+  variant?: "primary" | "ghost" | "outline"
+  class?: string
+  target?: string
+  rel?: string
+  download?: boolean | string
+  "aria-label"?: string
+}
 
 const {
   href,
@@ -17,23 +17,22 @@ const {
   rel,
   download,
   ...rest
-} = Astro.props;
+} = Astro.props
 
 const base =
-  "group inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium tracking-tight transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-accent)]";
+  "group inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium tracking-tight transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-accent)]"
 
 const variants: Record<string, string> = {
   primary:
     "bg-neutral-900 text-neutral-50 hover:bg-neutral-800 shadow-sm hover:shadow-md hover:-translate-y-0.5",
   outline:
     "border border-neutral-300 text-neutral-900 hover:border-neutral-900 hover:-translate-y-0.5 bg-white/60 backdrop-blur",
-  ghost:
-    "text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100",
-};
+  ghost: "text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100",
+}
 
-const classes = `${base} ${variants[variant]} ${className}`;
+const classes = `${base} ${variants[variant]} ${className}`
 
-const Tag = href ? "a" : "button";
+const Tag = href ? "a" : "button"
 ---
 
 <Tag
@@ -42,6 +41,7 @@ const Tag = href ? "a" : "button";
   target={target}
   rel={rel}
   download={download}
-  {...rest}>
+  {...rest}
+>
   <slot />
 </Tag>

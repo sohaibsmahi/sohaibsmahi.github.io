@@ -1,9 +1,9 @@
 ---
-import { Icon } from "astro-icon/components";
-import Container from "../ui/Container.astro";
-import SectionHeading from "../ui/SectionHeading.astro";
-import Button from "../ui/Button.astro";
-import { site } from "../../data/site";
+import { Icon } from "astro-icon/components"
+import Container from "../ui/Container.astro"
+import SectionHeading from "../ui/SectionHeading.astro"
+import Button from "../ui/Button.astro"
+import { site } from "../../data/site"
 
 const contacts = [
   {
@@ -30,17 +30,24 @@ const contacts = [
     value: site.location,
     icon: "lucide:map-pin",
   },
-];
+]
 ---
 
 <section id="contact" class="py-20 sm:py-28">
   <Container>
-    <div class="relative overflow-hidden rounded-3xl border border-neutral-200 bg-white px-6 py-14 sm:px-12 sm:py-20">
+    <div
+      class="relative overflow-hidden rounded-3xl border border-neutral-200 bg-white px-6 py-14 sm:px-12 sm:py-20"
+    >
       <div
         aria-hidden="true"
-        class="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(180,83,9,0.12),transparent_70%)]">
+        class="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(180,83,9,0.12),transparent_70%)]"
+      >
       </div>
-      <div aria-hidden="true" class="absolute inset-0 grid-bg opacity-40 pointer-events-none"></div>
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 grid-bg opacity-40 pointer-events-none"
+      >
+      </div>
 
       <div class="relative max-w-2xl">
         <SectionHeading
@@ -63,8 +70,8 @@ const contacts = [
         <ul class="reveal mt-12 grid gap-4 sm:grid-cols-2" data-delay="4">
           {
             contacts.map((c) => {
-              const isLink = Boolean(c.href);
-              const Tag = isLink ? "a" : "div";
+              const isLink = Boolean(c.href)
+              const Tag = isLink ? "a" : "div"
               const linkProps = isLink
                 ? {
                     href: c.href,
@@ -72,31 +79,40 @@ const contacts = [
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {}),
                   }
-                : {};
+                : {}
               return (
                 <Tag
                   {...linkProps}
                   class={`group flex items-center gap-4 rounded-xl border border-neutral-200 bg-white/70 p-4 transition-all duration-300 ${
-                    isLink ? "hover:-translate-y-0.5 hover:border-neutral-900 hover:shadow-sm" : ""
-                  }`}>
+                    isLink
+                      ? "hover:-translate-y-0.5 hover:border-neutral-900 hover:shadow-sm"
+                      : ""
+                  }`}
+                >
                   <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-neutral-700 transition-colors group-hover:bg-neutral-900 group-hover:text-white">
                     <Icon name={c.icon} class="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div class="min-w-0 flex-1">
-                    <p class="text-xs uppercase tracking-[0.14em] text-neutral-500">{c.label}</p>
+                    <p class="text-xs uppercase tracking-[0.14em] text-neutral-500">
+                      {c.label}
+                    </p>
                     <p class="mt-0.5 truncate text-sm font-medium text-neutral-900">
                       {c.value}
                     </p>
                   </div>
                   {isLink && (
                     <Icon
-                      name={c.external ? "lucide:arrow-up-right" : "lucide:arrow-right"}
+                      name={
+                        c.external
+                          ? "lucide:arrow-up-right"
+                          : "lucide:arrow-right"
+                      }
                       class="h-4 w-4 text-neutral-400 transition-transform duration-300 group-hover:text-neutral-900 group-hover:translate-x-0.5"
                       aria-hidden="true"
                     />
                   )}
                 </Tag>
-              );
+              )
             })
           }
         </ul>
